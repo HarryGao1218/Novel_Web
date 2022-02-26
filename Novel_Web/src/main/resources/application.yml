@@ -1,0 +1,38 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/novel_web?serverTimezone=GMT%2b8
+    username: root
+    password: gaoyiren011218
+  http:
+    multipart:
+      location: /data/upload_tmp
+
+#  servlet:
+#    multipart:
+#      enabled: true
+#      #单个文件的大小
+#      max-file-size: 20MB
+#      #总数据的大小
+#      max-request-size: 20MB
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml #扫描所有mybatis的xml文件
+
+#  configuration:configuration
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: false
+files:
+  upload:
+    path: D:/IdeaProjects/Novel_Web/data/
+
+#jasypt:
+#  encryptor:
+#    password: gaoyiren011218
